@@ -1,0 +1,102 @@
+.sidebar {
+  width: 280px;
+  /* Increased from 240px */
+  background: var(--bg-card);
+  min-height: calc(100vh - 64px);
+  padding: 1.5rem 1rem;
+  /* More padding */
+  border-right: 1px solid var(--border);
+  position: sticky;
+  top: 64px;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.sidebar-menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  /* Increased gap */
+}
+
+.sidebar-menu li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  /* Increased gap */
+  padding: 0.875rem 1rem;
+  /* Larger padding */
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-size: 0.95rem;
+  /* Larger font */
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+
+.sidebar-menu li img {
+  width: 22px;
+  /* Larger icon */
+  height: 22px;
+  object-fit: contain;
+  opacity: 0.6;
+  transition: var(--transition);
+  filter: var(--icon-filter);
+}
+
+.sidebar-menu li .sidebar-icon {
+  width: 24px;
+  /* Larger icon */
+  height: 24px;
+  opacity: 0.6;
+  transition: var(--transition);
+  color: var(--text-muted);
+}
+
+.sidebar-menu li:hover {
+  background: var(--bg-main);
+  color: var(--text-main);
+  transform: translateX(4px);
+}
+
+.sidebar-menu li:hover img,
+.sidebar-menu li:hover .sidebar-icon {
+  opacity: 1;
+}
+
+.sidebar-menu li.active {
+  background: var(--primary-light);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.sidebar-menu li.active img,
+.sidebar-menu li.active .sidebar-icon {
+  opacity: 1;
+  filter: none;
+  color: var(--primary);
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 72px;
+    /* Slightly wider folded state */
+    padding: 1rem 0.5rem;
+  }
+
+  .sidebar-menu li span {
+    display: none;
+  }
+
+  .sidebar-menu li {
+    justify-content: center;
+    padding: 0.75rem;
+  }
+
+  .sidebar-menu li:hover {
+    transform: none;
+  }
+}

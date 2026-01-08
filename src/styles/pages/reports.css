@@ -1,0 +1,328 @@
+/* Reports Page - Compact & Aligned */
+:root {
+    --gov-blue: #0A3D75;
+    --gov-blue-light: #2E5C99;
+    --gov-orange: #FF9933;
+    --gov-green: #138808;
+    --gov-bg: #F5F7FA;
+    --gov-border: #E0E0E0;
+}
+
+.reports-page {
+    padding: 1.5rem;
+    background-color: var(--gov-bg);
+    min-height: 100vh;
+    font-family: 'Noto Sans', 'Arial', sans-serif;
+    opacity: 0;
+    animation: bgFadeIn 0.8s ease-out forwards;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+@keyframes bgFadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Header Section */
+.reports-header {
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid var(--gov-blue);
+    padding-bottom: 0.5rem;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.reports-header::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 33%;
+    height: 3px;
+    background: var(--gov-orange);
+}
+
+.reports-header::before {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    right: 0;
+    width: 33%;
+    height: 3px;
+    background: var(--gov-green);
+}
+
+.reports-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.reports-title h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--gov-blue);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.reports-subtitle {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Summary Cards (KPIs) - Compact */
+.report-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.summary-card {
+    background: white;
+    border: 1px solid var(--gov-border);
+    border-top: 3px solid var(--gov-blue);
+    border-radius: 4px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+}
+
+.summary-card:hover {
+    transform: translateY(-2px);
+    border-top-color: var(--gov-orange);
+}
+
+.card-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f4f8;
+    border-radius: 50%;
+    color: var(--gov-blue);
+    font-size: 1.25rem;
+    border: 1px solid #dcdcdc;
+    flex-shrink: 0;
+}
+
+.card-content h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #333;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.card-content p {
+    margin: 0.2rem 0 0 0;
+    color: #666;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Main Grid Layout */
+.reports-main-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.reports-col-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.reports-col-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Report Cards */
+.report-card {
+    background: white;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--gov-border);
+    border-radius: 4px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.report-card h2 {
+    margin: 0;
+    padding: 0.75rem 1rem;
+    background: #f1f5f9;
+    font-size: 1rem;
+    color: var(--gov-blue);
+    border-bottom: 1px solid var(--gov-border);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.report-list {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.report-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s;
+}
+
+.report-item:last-child {
+    border-bottom: none;
+}
+
+.report-item:hover {
+    background-color: #f8fbff;
+}
+
+.item-label {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.item-value {
+    background: var(--gov-blue);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* Recent Activity Compact */
+.activity-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.activity-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.activity-info h4 {
+    margin: 0 0 0.15rem 0;
+    color: var(--gov-blue);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.activity-info p {
+    margin: 0;
+    color: #666;
+    font-size: 0.8rem;
+}
+
+.activity-meta {
+    text-align: right;
+    min-width: 80px;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-badge.pending {
+    background: #FFF3CD;
+    color: #856404;
+    border: 1px solid #FFEEBA;
+}
+
+.status-badge.resolved {
+    background: #D4EDDA;
+    color: #155724;
+    border: 1px solid #C3E6CB;
+}
+
+.status-badge.in-progress {
+    background: #D1ECF1;
+    color: #0C5460;
+    border: 1px solid #BEE5EB;
+}
+
+.activity-date {
+    display: block;
+    margin-top: 0.15rem;
+    color: #888;
+    font-size: 0.75rem;
+}
+
+/* Metrics Compact */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.metric-item {
+    text-align: center;
+    padding: 0.75rem;
+    background: white;
+    border: 1px solid var(--gov-border);
+    border-radius: 4px;
+}
+
+.metric-label {
+    font-size: 0.8rem;
+}
+
+.metric-value {
+    font-size: 1.25rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .reports-page {
+        padding: 1rem;
+    }
+
+    .report-summary {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .reports-main-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reports-header {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+    }
+}

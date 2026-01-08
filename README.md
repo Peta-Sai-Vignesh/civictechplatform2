@@ -1,1 +1,110 @@
-# civictechplatform2
+# Civic Platform: Citizen Engagement & Smart Governance
+
+![Civic Tech Banner](https://img.shields.io/badge/Status-Cloud--Operational-brightgreen)
+![React](https://img.shields.io/badge/React-19-blue)
+![Firebase](https://img.shields.io/badge/Firebase-v12-orange)
+![Vite](https://img.shields.io/badge/Vite-7-purple)
+
+**Civic Platform** is a modern, real-time citizen engagement application designed to bridge the gap between residents and their local municipalities. It empowers citizens to report local issues, propose community-driven projects, and participate in decision-making through a transparent voting system.
+
+---
+
+##  Key Features
+
+###  Citizen Portal
+- **Real-time Complaint Tracking**: Raise complaints (Roads, Water, Garbage, etc.) and monitor their status from "Pending" to "Resolved" with live updates.
+- **Project Proposals**: Propose new local development ideas (zebra crossings, parks, street lights) to your community.
+- **Community Polls**: Cast your vote on proposed projects in your neighborhood.
+- **Personalized Dashboard**: Track your civic activities, statistics, and municipality announcements.
+
+###  Admin Dashboard (Municipality View)
+- **Centralized Complaint Management**: View all platform-wide complaints, filter by location or type, and update statuses in real-time.
+- **User Insights**: Monitor active user registration and platform growth.
+- **Transparent Decisions**: Log official actions based on community voting results.
+
+---
+
+##  Technology Stack
+
+- **Frontend**: React 19, Vite, Vanilla CSS (Premium Custom Design).
+- **Backend-as-a-Service**: Firebase (Authentication, Firestore Database).
+- **State Management**: React Hooks (useState, useEffect) with real-time Firebase Snapshots.
+- **Real-time**: Firestore `onSnapshot` for live interactivity without page reloads.
+
+---
+
+##  Getting Started
+
+### Prerequisites
+- Node.js (v18+)
+- npm or yarn
+
+### Installation
+1.  **Clone the repository**:
+    ```bash
+    git clone https://github.com/siddharthg-7/civictechplatform-main.git
+    cd civictechplatform-main
+    ```
+
+2.  **Install dependencies**:
+    ```bash
+    npm install
+    ```
+
+3.  **Start the development server**:
+    ```bash
+    npm run dev
+    ```
+
+---
+
+##  Configuration (Firebase Setup)
+
+To use your own Firebase project, update `src/firebase.js` with your configuration:
+
+1.  Enable **Email/Password Authentication** in the Firebase Console.
+2.  Create a **Firestore Database** in **Test Mode**.
+3.  Add your config object:
+    ```javascript
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_AUTH_DOMAIN",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_STORAGE_BUCKET",
+      messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
+    ```
+
+---
+
+## Project Structure
+
+```text
+src/
+├── admin/               # Admin side pages and styling
+├── assets/              # Icons and images
+├── community/           # Polls, Propose Project, and Decision Logs
+├── components/          # Shared components (Navbar, Sidebar)
+├── pages/               # User core pages (Dashboard, Complaints, Auth)
+├── styles/              # Global and modular CSS
+└── firebase.js          # Core SDK configuration
+```
+
+---
+
+##  Premium Aesthetics
+The platform features a **state-of-the-art design system** including:
+- Glassmorphism effects in community polls.
+- Dynamic color-coded status badges.
+- Smooth CSS animations and transitions for a fluid UX.
+- Responsive grid layouts tailored for all devices.
+
+---
+
+## 📄 License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
+**Developed with ❤️ for a smarter community.**
